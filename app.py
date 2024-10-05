@@ -2,10 +2,8 @@ import streamlit as st
 import pandas as pd
 import joblib
 from utils import preprocessor
-
 def run():
-    model = joblib.load(open('model.joblib','rb'))
-
+    model = joblib.load(open('model.joblib', 'rb'))
     st.title("Sentiment Analysis")
     st.text("Basic app to detect the sentiment of text.")
     st.text("")
@@ -20,6 +18,5 @@ def run():
             output = 'negative 👎'
         sentiment=f'Predicted sentiment of "{userinput}" is {output}.'
         st.success(sentiment)
-
 if __name__ == "__main__":
     run()
